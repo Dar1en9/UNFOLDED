@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 # Camera settings
 @export_group("Camera Settings")
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: float = 0.02
 @export var camera_smoothness: float = 10.0
 
 # Movement settings
@@ -10,11 +10,9 @@ extends CharacterBody3D
 @export var walk_speed: float = 5.0
 
 
-@export var interaction_range = 3.0
-@export var hold_position: Node3D
+@onready var hold_item: Sprite3D = $Camera3D/hold_item
 
-var held_object: RigidBody3D = null
-var is_holding = false
+var holding_id = -1
 
 #@onready var camera_pivot: Node3D = $CameraPivot
 var camera: Camera3D
@@ -42,10 +40,7 @@ func _input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if event.is_action_pressed("interact"):
-		if is_holding:
-			release_object()
-		else:
-			try_interact()
+		try_interact()
 
 func _process(delta: float) -> void:
 	# Apply smooth camera rotation
@@ -80,42 +75,22 @@ func _physics_process(delta: float) -> void:
 	
 	# Move the character
 	move_and_slide()
+	
+	
 
 func try_interact():
 	if interaction_ray.is_colliding():
 		var collider = interaction_ray.get_collider()
 
-	#if collider is RigidBody3D and collider.has_method("pick_up"):
-		#pick_up_object(collider)
-	#elif collider.has_method("interact"):
-		#collider.interact(self)
+		if collider.is_pickble:
+			pick_up_object(collider)
+		elif collider.is_interactable:
+			collider.interact(self)
 
-func pick_up_object(obj: RigidBody3D):
-	if is_holding:
+func pick_up_object(obj):
+	if holding_id != -1:
 		return
 
-	held_object = obj
-	is_holding = true
-	held_object.pick_up()
-
-	# Disable physics while holding
-	held_object.freeze = true
-	held_object.collision_layer = 0
-	held_object.collision_mask = 0
-
-func release_object():
-	if not is_holding or not held_object:
-		return
-
-	# Re-enable physics
-	held_object.freeze = false
-	held_object.collision_layer = 1
-	held_object.collision_mask = 1
-
-	# Apply a small forward velocity when releasing
-	held_object.linear_velocity = camera.global_transform.basis.z * -2
-	held_object.angular_velocity = Vector3.ZERO
-
-	held_object.release()
-	held_object = null
-	is_holding = false
+	#obj.reparent(self)
+	hold_item.texture = obj.pick_up()
+	holding_id = obj.id

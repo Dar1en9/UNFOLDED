@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://1solgawgfrma"]
+
+[ext_resource type="PackedScene" uid="uid://b66c0htg0a03m" path="res://scenes/player.tscn" id="1_2diqr"]
+[ext_resource type="PackedScene" uid="uid://8jh3103lm6q1" path="res://scenes/item.tscn" id="2_axyqp"]
+[ext_resource type="Texture2D" uid="uid://dnxr6jr0d20dn" path="res://assets/fire.png" id="3_3m0gu"]
+[ext_resource type="Texture2D" uid="uid://bmfj6us4luqug" path="res://assets/girl_ghost_central.png" id="3_axyqp"]
+[ext_resource type="Texture2D" uid="uid://bswgg2xnk3eai" path="res://assets/girl_ghost_left.png" id="5_3m0gu"]
+
+[node name="world2" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_2diqr")]
+
+[node name="item" parent="." instance=ExtResource("2_axyqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710706, 0, -2.15177)
+is_interactable = true
+is_pickble = true
+texture_init = ExtResource("3_axyqp")
+pick_up_texture = ExtResource("3_3m0gu")
+picked_up_texture = ExtResource("5_3m0gu")

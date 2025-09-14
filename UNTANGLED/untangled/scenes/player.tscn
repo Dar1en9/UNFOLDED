@@ -6,3 +6,10 @@
 script = ExtResource("1_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99942, 0.0340448, 0, -0.0340448, 0.99942, 0, 0, 0)
+
+[node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -2)
+
+[node name="hold_item" type="Sprite3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.622328, -0.103149, -1.31421)
