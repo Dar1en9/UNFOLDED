@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7jua1dqudrsq"]
 
 [ext_resource type="Shader" uid="uid://cin8j3kdqmycj" path="res://scenes/fire.gdshader" id="1_t76o2"]
-[ext_resource type="Script" uid="uid://cw8hccv36nskv" path="res://scripts/ghost.gd" id="2_l5lq6"]
+[ext_resource type="Script" uid="uid://cw8hccv36nskv" path="res://assets/scripts/ghost.gd" id="2_l5lq6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l5lq6"]
 resource_local_to_scene = true

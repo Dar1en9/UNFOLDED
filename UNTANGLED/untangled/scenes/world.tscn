@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bswgg2xnk3eai" path="res://assets/girl_ghost_left.png" id="3_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://pkangtl8ytpx" path="res://assets/girl_ghost_right.png" id="4_7r4gi"]
 [ext_resource type="Shader" uid="uid://cin8j3kdqmycj" path="res://scenes/fire.gdshader" id="5_i7141"]
-[ext_resource type="Script" uid="uid://ckjvbldxc0543" path="res://scripts/dialogue manager.gd" id="8_7r4gi"]
-[ext_resource type="Script" uid="uid://kwnlr6874arg" path="res://scripts/dialogue_resurce.gd" id="9_w7kh3"]
+[ext_resource type="Script" uid="uid://ckjvbldxc0543" path="res://assets/scripts/dialogue manager.gd" id="8_7r4gi"]
+[ext_resource type="Script" uid="uid://kwnlr6874arg" path="res://assets/scripts/dialogue_resurce.gd" id="9_w7kh3"]
 [ext_resource type="StyleBox" uid="uid://cs87psjhwenp7" path="res://assets/styleboxes/girl_right_style_box_flat.tres" id="10_w7kh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7141"]
@@ -257,7 +257,7 @@ shadow_enabled = true
 omni_range = 14.904
 
 [node name="player" parent="." instance=ExtResource("2_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.39506, 9.92315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413669, 3.39506, 8.70823)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
