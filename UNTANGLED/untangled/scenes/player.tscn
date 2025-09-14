@@ -13,3 +13,16 @@ target_position = Vector3(0, 0, -2)
 
 [node name="hold_item" type="Sprite3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.622328, -0.103149, -1.31421)
+
+[node name="interaction ui" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="interaction ui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="interaction ui/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

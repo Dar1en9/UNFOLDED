@@ -12,7 +12,7 @@ extends CharacterBody3D
 
 @onready var hold_item: Sprite3D = $Camera3D/hold_item
 
-var holding_id = -1
+var holding_name : String = "none"
 
 #@onready var camera_pivot: Node3D = $CameraPivot
 var camera: Camera3D
@@ -81,16 +81,17 @@ func _physics_process(delta: float) -> void:
 func try_interact():
 	if interaction_ray.is_colliding():
 		var collider = interaction_ray.get_collider()
-
-		if collider.is_pickble:
-			pick_up_object(collider)
-		elif collider.is_interactable:
-			collider.interact(self)
+		
+		if (collider.interact_requirement == holding_name || collider.interact_requirement == "none"):
+			if collider.is_pickble:
+				pick_up_object(collider)
+			elif collider.is_interactable:
+				collider.interact(self)
 
 func pick_up_object(obj):
-	if holding_id != -1:
+	if holding_name != "none":
 		return
 
 	#obj.reparent(self)
 	hold_item.texture = obj.pick_up()
-	holding_id = obj.id
+	holding_name = obj.item_name
