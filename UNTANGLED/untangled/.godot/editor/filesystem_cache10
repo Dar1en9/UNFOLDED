@@ -1,0 +1,30 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1757848981
+icon.svg::CompressedTexture2D/CompressedTexture2D::6843784017917775460::1757846076::1757846157::1::::<><><>0<>0<>f6b3d840edc423705924528ef50a1b4f<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+player_controller.gd::GDScript/GDScript::519559610850964650::1757846076::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://assets/::1757846158
+fire.png::CompressedTexture2D/CompressedTexture2D::8120285755317991871::1757846076::1757846158::1::::<><><>0<>0<>63fe3aedad756e8f9063a99cb59024d1<>res://.godot/imported/fire.png-dcd8d46f0ab7d214a6d8da4be8adf942.s3tc.ctex::
+girl_ghost_central.png::CompressedTexture2D/CompressedTexture2D::3239611588272353118::1757846076::1757846158::1::::<><><>0<>0<>5df5f12ddf94f896fd22d1b3382fad66<>res://.godot/imported/girl_ghost_central.png-9bbf0d1a2dcc0febe86cfbd648922d40.s3tc.ctex::
+girl_ghost_left.png::CompressedTexture2D/CompressedTexture2D::3695612650753111672::1757846076::1757846158::1::::<><><>0<>0<>37db0616f439fac8ce084140b4fea2cb<>res://.godot/imported/girl_ghost_left.png-4af1fe57960b28505e4968200ab39a6b.s3tc.ctex::
+girl_ghost_right.png::CompressedTexture2D/CompressedTexture2D::1073499992468086481::1757846076::1757846158::1::::<><><>0<>0<>926ad4320e41e4d30cb7deeeef057286<>res://.godot/imported/girl_ghost_right.png-41b7b08227c073baeb1ff56e01c1531e.s3tc.ctex::
+girl_human_central.png::CompressedTexture2D/CompressedTexture2D::5405246558216097778::1757846076::1757846157::1::::<><><>0<>0<>e9075a3065dfcdd9ce0f27383951b15f<>res://.godot/imported/girl_human_central.png-b34b27ef3917c52e598b3574b73b5b87.ctex::
+girl_human_left.png::CompressedTexture2D/CompressedTexture2D::3100093909639420614::1757846076::1757846157::1::::<><><>0<>0<>51903660d9220672d142a9420e5f3d9d<>res://.godot/imported/girl_human_left.png-3727d17b74a7a341c590110b0381f5eb.ctex::
+girl_human_right.png::CompressedTexture2D/CompressedTexture2D::3822889481939735796::1757846076::1757846157::1::::<><><>0<>0<>2d2dadaa84c8831ab15d09ca932fc6b7<>res://.godot/imported/girl_human_right.png-3c275f517240a687dd2ded6d5e8d0a12.ctex::
+::res://assets/styleboxes/::1757846076
+defult.tres::StyleBoxFlat/StyleBoxFlat::2181356140353124926::1757846076::0::1::::<><><>0<>0<><>::
+girl_center_style_box_flat.tres::StyleBoxFlat/StyleBoxFlat::6133658608724749714::1757846076::0::1::::<><><>0<>0<><>::
+girl_left_style_box_flat.tres::StyleBoxFlat/StyleBoxFlat::5477446529129965570::1757846076::0::1::::<><><>0<>0<><>::
+girl_right_style_box_flat.tres::StyleBoxFlat/StyleBoxFlat::6106335709103020402::1757846076::0::1::::<><><>0<>0<><>::
+::res://fonts/::1757848901
+MontserratAlternates-Regular.ttf::FontFile/FontFile::8593075717227616771::1757848899::1757848901::1::::<><><>0<>0<>a39387a4191796999388e540eba73d90<>res://.godot/imported/MontserratAlternates-Regular.ttf-bea721694031be787926aea1a49dddfc.fontdata::
+::res://scenes/::1757848044
+fire.gdshader::Shader/Shader::5363210246459710957::1757846076::0::1::::<><><>0<>0<><>::
+ghost.tscn::PackedScene/PackedScene::7038679474440454352::1757846076::0::1::::<><><>0<>0<><>::uid://cin8j3kdqmycj::::res://scenes/fire.gdshader<>uid://cw8hccv36nskv::::res://scripts/ghost.gd
+panel.tres::StyleBoxFlat/StyleBoxFlat::203587540928135841::1757846076::0::1::::<><><>0<>0<><>::
+player.tscn::PackedScene/PackedScene::4626437023001899064::1757846076::0::1::::<><><>0<>0<><>::uid://hnxcn67ks0kc::::res://player_controller.gd
+world.tscn::PackedScene/PackedScene::6107779746457284592::1757848044::0::1::::<><><>0<>0<><>::uid://c7jua1dqudrsq::::res://scenes/ghost.tscn<>uid://dnxr6jr0d20dn::::res://assets/fire.png<>uid://b66c0htg0a03m::::res://scenes/player.tscn<>uid://bmfj6us4luqug::::res://assets/girl_ghost_central.png<>uid://bswgg2xnk3eai::::res://assets/girl_ghost_left.png<>uid://pkangtl8ytpx::::res://assets/girl_ghost_right.png<>uid://cin8j3kdqmycj::::res://scenes/fire.gdshader<>uid://ckjvbldxc0543::::res://scripts/dialogue manager.gd<>uid://kwnlr6874arg::::res://scripts/dialogue_resurce.gd<>uid://cs87psjhwenp7::::res://assets/styleboxes/girl_right_style_box_flat.tres
+::res://scripts/::1757846076
+dialogue manager.gd::GDScript/GDScript::5494586629635035126::1757846076::0::1::::<>Control<><>0<>0<><>::
+dialogue_resurce.gd::GDScript/GDScript::748114653937718288::1757846076::0::1::::DialRes<>Resource<><>0<>0<><>::
+ghost.gd::GDScript/GDScript::6385549122645805641::1757846076::0::1::::<>Sprite3D<><>0<>0<><>::
+player_controller_interaction.gd::GDScript/GDScript::8979440749952691965::1757846076::0::1::::<>Node<><>0<>0<><>::

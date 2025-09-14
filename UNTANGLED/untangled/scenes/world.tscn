@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ctawifrtk8fxg"]
+[gd_scene load_steps=41 format=3 uid="uid://ctawifrtk8fxg"]
 
 [ext_resource type="PackedScene" uid="uid://c7jua1dqudrsq" path="res://scenes/ghost.tscn" id="1_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dnxr6jr0d20dn" path="res://assets/fire.png" id="1_rwgxs"]
@@ -80,18 +80,132 @@ shader_parameter/diformation = 0.0
 
 [sub_resource type="Resource" id="Resource_e3hyu"]
 script = ExtResource("9_w7kh3")
-speaker_ind = 0
-dialogue_lines = Array[String](["dsdfs", "sdfs", "gfsf"])
+speaker_ind = 2
+dialogue_lines = Array[String](["Да-да, у неё было тако-о-ое лицо..."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_w7kh3"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String](["Т-с, девочки. Посмотрите. Это правда он?"])
 metadata/_custom_type_script = "uid://kwnlr6874arg"
 
 [sub_resource type="Resource" id="Resource_q5onr"]
 script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Быть того не может..."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_jhx03"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String](["Да точно он! Он нас видит, он нас видит!", "Этот день наконец настал!"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_o8fc1"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Привет! Стой, не бойся, мы не причиним тебе вреда.", "Меня зовут Элис, слева от меня Энн, а справа Стейси."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_xo05s"]
+script = ExtResource("9_w7kh3")
 speaker_ind = 2
-dialogue_lines = Array[String](["sdf", "asd"])
+dialogue_lines = Array[String](["Наконец-то ты пришел! Мы так рады, что ты здесь."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_dss4m"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String](["Ладно вам, девочки, вы его пугаете. Давайте по порядку."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_7t5mc"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Точно, Стейси права. Ты прости нас,", "мы просто волнуемся. Мы так долго ждали этого момента…"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_lakw3"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 2
+dialogue_lines = Array[String]([" А ведь если бы не тот блендер, который я не выключила", "по своей глупости, ничего бы этого не было."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_pm21f"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Энн, ты не виновата! Это все я."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_2lf6f"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String](["Элис, Энн, хватит. Давайте я всё расскажу.", " В общем, это случилось летом прошлого года. Мы втроем поехали в детский лагерь.", "Там было довольно весело, да и кормили неплохо, но в один день нам пришла в голову необычная идея…"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_7iits"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 2
+dialogue_lines = Array[String]([" Да уж, необычная. Мы решили дождаться отбоя,", "и, когда вожатые уйдут спать в свой блок, сбежать из корпуса.", "Так мы, собственно, и сделали."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_oo54l"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Поначалу было весело, мы прокрались к зданию столовой,", "всё это время стараясь не издать ни шороха. Потом мы с удивлением обнаружили,", "что задняя дверь столовой, ведущая на кухню, была открыта…"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_kpybi"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String]([" Ну мы, конечно, вошли туда. Было и правда весело,", "мы гремели посудой, пытались приготовить завтрак. После мы пошли", "в саму столовую и сели там. Как вдруг…"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_ctatt"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Всё загорелось! Это произошло так быстро, что мы не успели ничего сделать.", "Энн думает, что она вызвала пожар, потому что забыла вытащить блендер из розетки."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_xgqkh"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 2
+dialogue_lines = Array[String](["Я уверена, что причина в этом. Мне так жаль, я очень виновата…"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_munwf"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String](["Энн, это я, это всё из-за меня. Я забыла выключить плиту перед тем,", "как мы ушли. Наверное что-то с ней случилось."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_ts3gi"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["Нет, это из-за меня! Я от скуки щелкала рубильник туда-сюда.", "Наверное, что-то не то с ним сделала, и его замкнуло."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_0nbtd"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 2
+dialogue_lines = Array[String](["В общем, как ты мог понять, мы не знаем, что же конкретно произошло.", "Знаем только, что пожар забрал наши жизни. Поэтому ты видишь нас необычно…", "Мы — призраки."])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_37qwj"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String]([" И вся наша надежда на тебя! С самого начала мы чувствовали,", "что ты должен прийти, мы знали это. Поэтому всё это время мы и ждали тебя тут.", "Ты можешь всё изменить!"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_navra"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 1
+dialogue_lines = Array[String]([" Отправляйся в прошлое. В настоящем уже делать нечего.", "Времени у тебя будет немного, будь осторожен. Мы будем тебя ждать!"])
 metadata/_custom_type_script = "uid://kwnlr6874arg"
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mrxx"]
-font_size = 81
+font_size = 36
 font_color = Color(0.315753, 0.249403, 0.659962, 1)
 
 [node name="world" type="Node3D"]
@@ -160,7 +274,7 @@ offset_bottom = -0.192017
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_7r4gi")
-intro_dialogue = Array[ExtResource("9_w7kh3")]([SubResource("Resource_e3hyu"), SubResource("Resource_q5onr")])
+intro_dialogue = Array[ExtResource("9_w7kh3")]([SubResource("Resource_e3hyu"), SubResource("Resource_w7kh3"), SubResource("Resource_q5onr"), SubResource("Resource_jhx03"), SubResource("Resource_o8fc1"), SubResource("Resource_xo05s"), SubResource("Resource_dss4m"), SubResource("Resource_7t5mc"), SubResource("Resource_lakw3"), SubResource("Resource_pm21f"), SubResource("Resource_2lf6f"), SubResource("Resource_7iits"), SubResource("Resource_oo54l"), SubResource("Resource_kpybi"), SubResource("Resource_ctatt"), SubResource("Resource_xgqkh"), SubResource("Resource_munwf"), SubResource("Resource_ts3gi"), SubResource("Resource_0nbtd"), SubResource("Resource_37qwj"), SubResource("Resource_navra")])
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
 layout_mode = 1
