@@ -792,7 +792,7 @@ interact_requirement = "safe"
 pick_up_texture = ExtResource("26_pg8nx")
 
 [node name="bag2" parent="Kitchen" node_paths=PackedStringArray("dependent") instance=ExtResource("2_axyqp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54807, -0.652276, 0.0735939)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54807, -0.544612, 0.0735939)
 is_interactable = true
 change_dependent = true
 dependent = NodePath("../bag")
@@ -810,7 +810,7 @@ picked_up_texture = ExtResource("27_pg8nx")
 secret_code = "1251"
 
 [node name="item2" parent="Kitchen" instance=ExtResource("2_axyqp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98765, 0, 1.49237)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98765, -0.177313, 1.49237)
 item_name = "freezer"
 is_interactable = true
 texture_interacted = ExtResource("30_pg8nx")
@@ -818,3 +818,7 @@ secret_code = "ZRHN"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366683, 0.0702493, 1.80229)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.503451)
+light_color = Color(0.95503, 0.878344, 0.675937, 1)

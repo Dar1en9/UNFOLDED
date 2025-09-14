@@ -42,7 +42,7 @@ func interact(interactor):
 func pick_up() -> Texture:
 	if (pick_up_texture):
 		change_texture(picked_up_texture)
-		is_interactable = false
+		is_pickble = false
 		return pick_up_texture
 	visible = false
 	is_interactable = false

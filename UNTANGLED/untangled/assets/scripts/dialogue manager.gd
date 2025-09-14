@@ -4,6 +4,8 @@ extends Control
 var queue : Array[DialRes]
 var curr_replic : Array[String]
 
+var simultaneous_scene = preload("res://scenes/world_2.tscn").instantiate()
+
 @onready var speacers_colors = [
 	preload("res://assets/styleboxes/girl_center_style_box_flat.tres"),
 	preload("res://assets/styleboxes/girl_left_style_box_flat.tres"),
@@ -57,6 +59,8 @@ func end_dialogue():
 	label.text = ""
 	visible = false;
 	
+	#get_tree().root.add_child(simultaneous_scene)
+	get_tree().change_scene_to_file("res://scenes/world_2.tscn")
 
 
 func set_panel_colors(colors):

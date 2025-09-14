@@ -12,3 +12,4 @@ res://assets/styleboxes/defult.tres
 res://scripts/dialogue manager.gd
 res://scenes/interaction_ui.gd
 res://assets/scripts/item.gd
+res://assets/scripts/dialogue manager.gd

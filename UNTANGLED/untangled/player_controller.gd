@@ -9,7 +9,6 @@ extends CharacterBody3D
 @export_group("Movement Settings")
 @export var walk_speed: float = 5.0
 
-@export var secret_codes = ["1251", "ZRHN"]
 @export var code_id = -1
 
 @onready var hold_item: Sprite3D = $Camera3D/hold_item
@@ -22,6 +21,7 @@ var camera: Camera3D
 @onready var control: Control = $"interaction ui/Control"
 
 @onready var input_field: LineEdit = $"interaction ui/Control2/LineEdit"
+@onready var interhint: Label = $"interaction ui/interhint"
 
 var intering
 
@@ -94,19 +94,20 @@ func _physics_process(delta: float) -> void:
 
 func try_interact():
 	if interaction_ray.is_colliding():
+		
 		var collider = interaction_ray.get_collider()
 		
 		if (collider.interact_requirement == holding_name || collider.interact_requirement == "none") && !is_texxxxxt:
-			 
+			
 			if collider.secret_code != "" && not intering:
 				intering = collider
 				get_code()
 				
 				return
 			
-			if (collider.interact_requirement == holding_name):
-				holding_name = "none"
-				hold_item.texture = null
+			#if (collider.interact_requirement == holding_name):
+				#holding_name = "none"
+				#hold_item.texture = null
 			
 			if collider.is_pickble:
 				pick_up_object(collider)
