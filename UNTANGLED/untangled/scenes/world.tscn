@@ -1,0 +1,192 @@
+[gd_scene load_steps=22 format=3 uid="uid://ctawifrtk8fxg"]
+
+[ext_resource type="PackedScene" uid="uid://c7jua1dqudrsq" path="res://scenes/ghost.tscn" id="1_qfnet"]
+[ext_resource type="Texture2D" uid="uid://dnxr6jr0d20dn" path="res://assets/fire.png" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://b66c0htg0a03m" path="res://scenes/player.tscn" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://bmfj6us4luqug" path="res://assets/girl_ghost_central.png" id="2_i7141"]
+[ext_resource type="Texture2D" uid="uid://bswgg2xnk3eai" path="res://assets/girl_ghost_left.png" id="3_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://pkangtl8ytpx" path="res://assets/girl_ghost_right.png" id="4_7r4gi"]
+[ext_resource type="Shader" uid="uid://cin8j3kdqmycj" path="res://scenes/fire.gdshader" id="5_i7141"]
+[ext_resource type="Script" uid="uid://ckjvbldxc0543" path="res://scripts/dialogue manager.gd" id="8_7r4gi"]
+[ext_resource type="Script" uid="uid://kwnlr6874arg" path="res://scripts/dialogue_resurce.gd" id="9_w7kh3"]
+[ext_resource type="StyleBox" uid="uid://cs87psjhwenp7" path="res://assets/styleboxes/girl_right_style_box_flat.tres" id="10_w7kh3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7141"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_i7141")
+shader_parameter/albedo_texture = ExtResource("2_i7141")
+shader_parameter/vawe_period = 16.5
+shader_parameter/vawe_hight = -0.018
+shader_parameter/speed = 0.86
+shader_parameter/diformation = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4gi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_i7141")
+shader_parameter/albedo_texture = ExtResource("3_4mrxx")
+shader_parameter/vawe_period = 4.635
+shader_parameter/vawe_hight = 0.025
+shader_parameter/speed = 0.86
+shader_parameter/diformation = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_i7141")
+shader_parameter/albedo_texture = ExtResource("4_7r4gi")
+shader_parameter/vawe_period = 18.911
+shader_parameter/vawe_hight = 0.018
+shader_parameter/speed = 0.79
+shader_parameter/diformation = 0.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
+sky_top_color = Color(0.0459118, 0.103922, 0.229685, 1)
+sky_horizon_color = Color(0.259609, 0.227826, 0.51957, 1)
+ground_bottom_color = Color(0.0459118, 0.103922, 0.229685, 1)
+ground_horizon_color = Color(0.259609, 0.227826, 0.51957, 1)
+
+[sub_resource type="Sky" id="Sky_71j4m"]
+sky_material = SubResource("ProceduralSkyMaterial_k0juu")
+
+[sub_resource type="Environment" id="Environment_qfnet"]
+background_mode = 2
+sky = SubResource("Sky_71j4m")
+tonemap_mode = 2
+glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.096995, 0.0792475, 0.250485, 1)
+fog_density = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1316
+volumetric_fog_albedo = Color(0.332507, 0.252351, 0.529722, 1)
+volumetric_fog_emission = Color(0.0966166, 0.0954202, 0.228385, 1)
+volumetric_fog_anisotropy = 0.68
+volumetric_fog_detail_spread = 0.5
+volumetric_fog_ambient_inject = 0.24
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7141"]
+albedo_color = Color(0.466138, 0.35866, 0.379171, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mrxx"]
+render_priority = 0
+shader = ExtResource("5_i7141")
+shader_parameter/albedo_texture = ExtResource("1_rwgxs")
+shader_parameter/vawe_period = 24.101
+shader_parameter/vawe_hight = 0.048
+shader_parameter/speed = 5.79
+shader_parameter/diformation = 0.0
+
+[sub_resource type="Resource" id="Resource_e3hyu"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 0
+dialogue_lines = Array[String](["dsdfs", "sdfs", "gfsf"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="Resource" id="Resource_q5onr"]
+script = ExtResource("9_w7kh3")
+speaker_ind = 2
+dialogue_lines = Array[String](["sdf", "asd"])
+metadata/_custom_type_script = "uid://kwnlr6874arg"
+
+[sub_resource type="LabelSettings" id="LabelSettings_4mrxx"]
+font_size = 81
+font_color = Color(0.315753, 0.249403, 0.659962, 1)
+
+[node name="world" type="Node3D"]
+
+[node name="ghost" parent="." instance=ExtResource("1_qfnet")]
+transform = Transform3D(0.992439, 0, -0.122735, 0, 1, 0, 0.122735, 0, 0.992439, 1.39511, 2, -3.56804)
+material_override = SubResource("ShaderMaterial_i7141")
+texture = ExtResource("2_i7141")
+
+[node name="ghost2" parent="." instance=ExtResource("1_qfnet")]
+transform = Transform3D(0.907826, 0, 0.539006, 0, 1.10734, 0, -0.580936, 0, 0.842302, -4.85143, 2, 0)
+material_override = SubResource("ShaderMaterial_7r4gi")
+texture = ExtResource("3_4mrxx")
+
+[node name="ghost3" parent="." instance=ExtResource("1_qfnet")]
+transform = Transform3D(0.788815, 0, -0.412155, 0, 0.89, 0, 0.412155, 0, 0.788815, 5.08262, 2.54809, -1.25166)
+material_override = SubResource("ShaderMaterial_w7kh3")
+texture = ExtResource("4_7r4gi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.495556, -0.0665175, 0, -0.133035, 0.991111, -0.5, 0.858328, 0.115212, -2.74557, 4.6077, 4.75547)
+light_color = Color(0.548203, 0.520041, 0.851288, 1)
+light_energy = 0.9
+shadow_enabled = true
+directional_shadow_max_distance = 1000.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qfnet")
+
+[node name="ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_i7141")
+
+[node name="fire" type="Sprite3D" parent="."]
+transform = Transform3D(1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.11, -0.733869, 1.186, -0.102542)
+material_override = SubResource("ShaderMaterial_4mrxx")
+billboard = 1
+texture = ExtResource("1_rwgxs")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0525643, 0)
+light_color = Color(0.936648, 0.770095, 0.464411, 1)
+light_energy = 6.576
+light_volumetric_fog_energy = 1.3
+light_size = 1.0
+light_specular = 1.308
+shadow_enabled = true
+omni_range = 14.904
+
+[node name="player" parent="." instance=ExtResource("2_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.39506, 9.92315)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.228
+anchor_top = 0.785
+anchor_right = 0.707
+anchor_bottom = 0.954
+offset_left = -108.656
+offset_top = -40.68
+offset_right = 96.536
+offset_bottom = -0.192017
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_7r4gi")
+intro_dialogue = Array[ExtResource("9_w7kh3")]([SubResource("Resource_e3hyu"), SubResource("Resource_q5onr")])
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.36
+anchor_right = 1.032
+anchor_bottom = 1.0
+offset_left = -0.224001
+offset_right = -0.22406
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("10_w7kh3")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.97
+anchor_bottom = 0.932
+offset_left = 30.0
+offset_top = 18.0
+offset_right = -7.35004
+offset_bottom = -4.98401
+text = "dfgxdfgxdfg xdf gx dfgxc fg fxgxx dfsdfsf dsfdfsd  dss"
+label_settings = SubResource("LabelSettings_4mrxx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
