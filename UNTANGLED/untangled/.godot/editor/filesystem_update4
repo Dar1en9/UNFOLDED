@@ -7,4 +7,3 @@ res://scenes/player.tscn
 res://scenes/ghost.tscn
 res://scenes/item.tscn
 res://scenes/world_2.tscn
-res://assets/scripts/dialogue manager.gd

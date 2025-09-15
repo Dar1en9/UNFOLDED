@@ -80,23 +80,27 @@ autowrap_mode = 3
 
 [node name="Control2" type="Control" parent="interaction ui"]
 layout_mode = 3
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="LineEdit" type="LineEdit" parent="interaction ui/Control2"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.175
-anchor_top = 0.69
-anchor_right = 0.846
-anchor_bottom = 0.902
-offset_left = -4.60001
-offset_top = -1.12003
-offset_right = -2.59204
-offset_bottom = -0.496033
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -356.0
+offset_top = -175.0
+offset_right = 1192.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.46, 0.46)
 theme_override_font_sizes/font_size = 146
 theme_override_styles/normal = SubResource("StyleBoxFlat_qlg0r")
 alignment = 1
