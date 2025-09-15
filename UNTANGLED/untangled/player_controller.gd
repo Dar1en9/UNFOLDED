@@ -45,6 +45,7 @@ func _input(event: InputEvent) -> void:
 		
 	# Toggle mouse capture with Escape key
 	if Input.is_action_just_pressed("ui_cancel"):
+		pass
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
@@ -136,7 +137,12 @@ func get_code():
 func _on_text_entered(text):
 	if text == intering.secret_code:
 		print("Код верный! Делаем что-то…")
-		intering.interact(self)
+		
+		if intering.is_pickble:
+				pick_up_object(intering)
+		elif intering.is_interactable:
+				intering.interact(self)
+				
 		input_field.visible = false
 		input_field.text = ""
 		is_texxxxxt = false

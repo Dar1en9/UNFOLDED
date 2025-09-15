@@ -787,6 +787,7 @@ texture_interacted = ExtResource("26_8rca2")
 
 [node name="zapiska" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.67327, 0.159176, -0.410087)
+item_name = "morz"
 is_pickble = true
 interact_requirement = "safe"
 pick_up_texture = ExtResource("26_pg8nx")
@@ -813,12 +814,18 @@ secret_code = "1251"
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98765, -0.177313, 1.49237)
 item_name = "freezer"
 is_interactable = true
+interact_requirement = "morz"
 texture_interacted = ExtResource("30_pg8nx")
 secret_code = "ZRHN"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.366683, 0.0702493, 1.80229)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193863, 0.126326, 1.51265)
+light_color = Color(0.988235, 0.905882, 1, 1)
+light_energy = 0.74
+shadow_enabled = true
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.503451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22723, 0.0183639, -1.5343)
 light_color = Color(0.95503, 0.878344, 0.675937, 1)
+shadow_enabled = true
+shadow_blur = 2.382

@@ -1,15 +1,10 @@
 res://scenes/world.tscn
+res://scenes/fire.gdshader
+res://assets/styleboxes/defult.tres
 res://assets/styleboxes/girl_center_style_box_flat.tres
 res://assets/styleboxes/girl_right_style_box_flat.tres
-res://scenes/fire.gdshader
-res://scripts/item.gd
-res://player_controller.gd
 res://scenes/player.tscn
 res://scenes/ghost.tscn
 res://scenes/item.tscn
 res://scenes/world_2.tscn
-res://assets/styleboxes/defult.tres
-res://scripts/dialogue manager.gd
-res://scenes/interaction_ui.gd
-res://assets/scripts/item.gd
 res://assets/scripts/dialogue manager.gd

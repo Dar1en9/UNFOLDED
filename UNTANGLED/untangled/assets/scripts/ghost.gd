@@ -1,7 +1,7 @@
 extends Sprite3D
 
-var sqeesh_diformation := Vector3(0.88, 1.22, 1.0)
-var sqeesh_duration := 0.2
+var sqeesh_diformation := Vector3(0.89, 1.11, 1.0)
+var sqeesh_duration := 0.17
 
 var tween
 

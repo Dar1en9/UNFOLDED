@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nbqq7687eh3e" path="res://assets/kitchenstuff/morozilka_open_mining.png" id="2_s8enn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4gq7n"]
-size = Vector3(0.5, 0.5, 0.679077)
+size = Vector3(0.5, 1.09857, 0.679077)
 
 [node name="item" type="StaticBody3D"]
 script = ExtResource("1_4gq7n")
@@ -14,5 +14,5 @@ transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0, 0, 0)
 texture = ExtResource("2_s8enn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0895386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00396609, 0.176065, -0.0094564)
 shape = SubResource("BoxShape3D_4gq7n")

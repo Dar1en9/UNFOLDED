@@ -9,7 +9,7 @@
 [ext_resource type="Shader" uid="uid://cin8j3kdqmycj" path="res://scenes/fire.gdshader" id="5_i7141"]
 [ext_resource type="Script" uid="uid://ckjvbldxc0543" path="res://assets/scripts/dialogue manager.gd" id="8_7r4gi"]
 [ext_resource type="Script" uid="uid://kwnlr6874arg" path="res://assets/scripts/dialogue_resurce.gd" id="9_w7kh3"]
-[ext_resource type="StyleBox" uid="uid://cs87psjhwenp7" path="res://assets/styleboxes/girl_right_style_box_flat.tres" id="10_w7kh3"]
+[ext_resource type="StyleBox" uid="uid://ctngpxc6juiko" path="res://assets/styleboxes/girl_center_style_box_flat.tres" id="10_w7kh3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7141"]
 resource_local_to_scene = true
@@ -221,7 +221,7 @@ material_override = SubResource("ShaderMaterial_7r4gi")
 texture = ExtResource("3_4mrxx")
 
 [node name="ghost3" parent="." instance=ExtResource("1_qfnet")]
-transform = Transform3D(0.788815, 0, -0.412155, 0, 0.89, 0, 0.412155, 0, 0.788815, 5.08262, 2.77387, -1.25166)
+transform = Transform3D(0.788815, 0, -0.412155, 0, 0.89, 0, 0.412155, 0, 0.788815, 5.08262, 2.9134, -1.25166)
 material_override = SubResource("ShaderMaterial_w7kh3")
 texture = ExtResource("4_7r4gi")
 
@@ -263,43 +263,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413669, 3.39506, 8.70823)
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_left = 0.228
-anchor_top = 0.785
-anchor_right = 0.707
-anchor_bottom = 0.954
-offset_left = -108.656
-offset_top = -40.68
-offset_right = 96.536
-offset_bottom = -0.192017
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_7r4gi")
 intro_dialogue = Array[ExtResource("9_w7kh3")]([SubResource("Resource_e3hyu"), SubResource("Resource_w7kh3"), SubResource("Resource_q5onr"), SubResource("Resource_jhx03"), SubResource("Resource_o8fc1"), SubResource("Resource_xo05s"), SubResource("Resource_dss4m"), SubResource("Resource_7t5mc"), SubResource("Resource_lakw3"), SubResource("Resource_pm21f"), SubResource("Resource_2lf6f"), SubResource("Resource_7iits"), SubResource("Resource_oo54l"), SubResource("Resource_kpybi"), SubResource("Resource_ctatt"), SubResource("Resource_xgqkh"), SubResource("Resource_munwf"), SubResource("Resource_ts3gi"), SubResource("Resource_0nbtd"), SubResource("Resource_37qwj"), SubResource("Resource_navra")])
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.032
-anchor_top = 0.36
-anchor_right = 1.032
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.224001
-offset_right = -0.22406
-offset_bottom = 18.0
+offset_top = -182.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 444
+theme_override_constants/margin_right = 444
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
 theme_override_styles/panel = ExtResource("10_w7kh3")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.97
-anchor_bottom = 0.932
-offset_left = 30.0
-offset_top = 18.0
-offset_right = -7.35004
-offset_bottom = -4.98401
-text = "dfgxdfgxdfg xdf gx dfgxc fg fxgxx dfsdfsf dsfdfsd  dss"
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/PanelContainer"]
+layout_mode = 2
 label_settings = SubResource("LabelSettings_4mrxx")
 horizontal_alignment = 1
 vertical_alignment = 1

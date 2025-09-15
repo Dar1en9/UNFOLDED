@@ -20,8 +20,8 @@ var simultaneous_scene = preload("res://scenes/world_2.tscn").instantiate()
 
 @onready var background: ColorRect = $Panel/Background
 
-@onready var panel: Panel = $Panel
-@onready var label: Label = $Panel/Label
+@onready var panel: PanelContainer = $MarginContainer/PanelContainer
+@onready var label: Label = $MarginContainer/PanelContainer/Label
 
 func _ready() -> void:
 	start_dialogue(intro_dialogue)

@@ -8,8 +8,18 @@
 font_size = 36
 font_color = Color(0.315753, 0.249403, 0.659962, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_dqkch"]
-font_size = 36
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlg0r"]
+bg_color = Color(0.619608, 0.666667, 0.827451, 1)
+border_width_left = 66
+border_width_top = 66
+border_width_right = 66
+border_width_bottom = 66
+border_color = Color(0.423529, 0.384314, 0.611765, 1)
+border_blend = true
+corner_radius_top_left = 66
+corner_radius_top_right = 66
+corner_radius_bottom_right = 66
+corner_radius_bottom_left = 66
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
@@ -77,7 +87,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LineEdit" type="LineEdit" parent="interaction ui/Control2"]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.175
@@ -88,17 +97,6 @@ offset_left = -4.60001
 offset_top = -1.12003
 offset_right = -2.59204
 offset_bottom = -0.496033
-
-[node name="interhint" type="Label" parent="interaction ui"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.497
-anchor_top = 0.897
-anchor_right = 0.497
-anchor_bottom = 0.897
-offset_left = -265.544
-offset_top = -23.256
-offset_right = 250.456
-offset_bottom = 26.744
-text = "нажми для взаимодействия"
-label_settings = SubResource("LabelSettings_dqkch")
+theme_override_font_sizes/font_size = 146
+theme_override_styles/normal = SubResource("StyleBoxFlat_qlg0r")
+alignment = 1
