@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://1solgawgfrma"]
+[gd_scene load_steps=82 format=4 uid="uid://1solgawgfrma"]
 
 [ext_resource type="PackedScene" uid="uid://b66c0htg0a03m" path="res://scenes/player.tscn" id="1_2diqr"]
 [ext_resource type="PackedScene" uid="uid://8jh3103lm6q1" path="res://scenes/item.tscn" id="2_axyqp"]
@@ -25,11 +25,15 @@
 [ext_resource type="Texture2D" uid="uid://btaxyjeitf5rt" path="res://assets/transp.png" id="22_gph3w"]
 [ext_resource type="Texture2D" uid="uid://4yr05lr6075g" path="res://assets/kitchenstuff/richag_on.png" id="25_0airf"]
 [ext_resource type="Texture2D" uid="uid://d3nwwapu3didf" path="res://assets/kitchenstuff/richag_off.png" id="26_8rca2"]
-[ext_resource type="Texture2D" uid="uid://tjypx3j14agj" path="res://assets/kitchenstuff/Kitchen_seif.png" id="26_j8pyg"]
 [ext_resource type="Texture2D" uid="uid://cjavqkfnhmtg8" path="res://assets/kitchenstuff/note_morze.png" id="26_pg8nx"]
+[ext_resource type="Script" uid="uid://bgmhrypochlwl" path="res://scenes/move_item.gd" id="27_hmty3"]
 [ext_resource type="Texture2D" uid="uid://b5vfy3ahlixcv" path="res://assets/kitchenstuff/seif_open.png" id="27_pg8nx"]
 [ext_resource type="Texture2D" uid="uid://up0bhhre0stn" path="res://assets/kitchenstuff/key.png" id="28_hmty3"]
+[ext_resource type="Script" uid="uid://dvehjd8dguiwt" path="res://assets/scripts/item_code.gd" id="28_j8pyg"]
+[ext_resource type="Texture2D" uid="uid://7v5peod7xx5s" path="res://assets/kitchenstuff/seif.png" id="29_0fc1a"]
 [ext_resource type="Texture2D" uid="uid://nbqq7687eh3e" path="res://assets/kitchenstuff/morozilka_open_mining.png" id="30_pg8nx"]
+[ext_resource type="AudioStream" uid="uid://dgyb0xyeua74r" path="res://assets/souds/wrong-47985.mp3" id="33_1ixkb"]
+[ext_resource type="AudioStream" uid="uid://cdl3nletc6tfj" path="res://assets/souds/plastic-108360.mp3" id="34_t0e0t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bbxf"]
 resource_name = "Wall3"
@@ -700,6 +704,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rgtf1")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmty3"]
+size = Vector3(0.088, 2000.8, 4.951)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0fc1a"]
+size = Vector3(4.03015, 2000.8, 0.0671387)
+
 [node name="world2" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_2diqr")]
@@ -768,55 +778,71 @@ skeleton = NodePath("")
 
 [node name="itemfire" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.66713, -0.357098, -0.581862)
-is_interactable = true
 texture_init = ExtResource("21_ab5jv")
 texture_interacted = ExtResource("22_gph3w")
 
 [node name="blender" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(-0.0402364, 0, 0.99919, 0, 1, 0, -0.99919, 0, -0.0402364, -1.49154, -0.153096, 0.715821)
-is_interactable = true
 texture_init = ExtResource("21_4mxcg")
 texture_interacted = ExtResource("22_auug4")
-interaction_text = "похоже, не то"
 
 [node name="item" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07431, 0.0244479, 2.30801)
-is_interactable = true
 texture_init = ExtResource("25_0airf")
 texture_interacted = ExtResource("26_8rca2")
 
 [node name="zapiska" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.67327, 0.159176, -0.410087)
-item_name = "morz"
+pick_up_texture = ExtResource("26_pg8nx")
 is_pickble = true
 interact_requirement = "safe"
-pick_up_texture = ExtResource("26_pg8nx")
 
-[node name="bag2" parent="Kitchen" node_paths=PackedStringArray("dependent") instance=ExtResource("2_axyqp")]
+[node name="bag2" parent="Kitchen" node_paths=PackedStringArray("dependent", "activate_node", "sound") instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54807, -0.544612, 0.0735939)
-is_interactable = true
-change_dependent = true
+script = ExtResource("27_hmty3")
 dependent = NodePath("../bag")
-move_dependent_for = Vector3(0, 0, -0.662)
+move_dependent_for = Vector3(0, 0, -1)
+move_duration = 0.5
+activate_node = NodePath("../safe")
+sound = NodePath("../../for_bag")
 
-[node name="safe" parent="Kitchen" instance=ExtResource("2_axyqp")]
+[node name="safe" parent="Kitchen" node_paths=PackedStringArray("sound") instance=ExtResource("2_axyqp")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98957, -0.759694, 0.0433697)
-item_name = "safe"
-is_interactable = true
-is_pickble = true
-texture_init = ExtResource("26_j8pyg")
+script = ExtResource("28_j8pyg")
+secret_code = "1251"
+texture_init = ExtResource("29_0fc1a")
 texture_interacted = ExtResource("27_pg8nx")
 pick_up_texture = ExtResource("28_hmty3")
 picked_up_texture = ExtResource("27_pg8nx")
-secret_code = "1251"
+item_name = "safe"
+is_interactable = false
+is_pickble = true
+sound = NodePath("../../wrong_sound")
 
-[node name="item2" parent="Kitchen" instance=ExtResource("2_axyqp")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98765, -0.177313, 1.49237)
-item_name = "freezer"
-is_interactable = true
-interact_requirement = "morz"
-texture_interacted = ExtResource("30_pg8nx")
+[node name="morozilka_door" parent="Kitchen" node_paths=PackedStringArray("sound") instance=ExtResource("2_axyqp")]
+transform = Transform3D(-3.99959e-08, 0, -0.915, 0, 0.915, 0, 0.915, 0, -3.99959e-08, 1.98765, -0.206219, 1.49237)
+script = ExtResource("28_j8pyg")
 secret_code = "ZRHN"
+texture_interacted = ExtResource("30_pg8nx")
+sound = NodePath("../../wrong_sound")
+
+[node name="wall_colls" type="StaticBody3D" parent="Kitchen"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kitchen/wall_colls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03456, 0.00863647, -0.00512697)
+shape = SubResource("BoxShape3D_hmty3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Kitchen/wall_colls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04392, 0.00863647, -0.00512697)
+shape = SubResource("BoxShape3D_hmty3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Kitchen/wall_colls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0130083, 999.43, 2.4437)
+shape = SubResource("BoxShape3D_0fc1a")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Kitchen/wall_colls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0130083, 999.43, -2.42973)
+shape = SubResource("BoxShape3D_0fc1a")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193863, 0.126326, 1.51265)
@@ -829,3 +855,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22723, 0.0183639, -1.5343)
 light_color = Color(0.95503, 0.878344, 0.675937, 1)
 shadow_enabled = true
 shadow_blur = 2.382
+
+[node name="wrong_sound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25436, -0.284605, 0.776003)
+stream = ExtResource("33_1ixkb")
+
+[node name="for_bag" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65284, -0.68428, -0.110305)
+stream = ExtResource("34_t0e0t")

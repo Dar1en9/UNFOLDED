@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b66c0htg0a03m"]
+[gd_scene load_steps=7 format=3 uid="uid://b66c0htg0a03m"]
 
 [ext_resource type="Script" uid="uid://hnxcn67ks0kc" path="res://player_controller.gd" id="1_3vyb7"]
 [ext_resource type="StyleBox" uid="uid://6cwu8f41cl87" path="res://assets/styleboxes/defult.tres" id="2_g2els"]
@@ -20,6 +20,10 @@ corner_radius_top_left = 66
 corner_radius_top_right = 66
 corner_radius_bottom_right = 66
 corner_radius_bottom_left = 66
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
+radius = 0.0882796
+height = 0.387205
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
@@ -103,4 +107,8 @@ grow_vertical = 0
 scale = Vector2(0.46, 0.46)
 theme_override_font_sizes/font_size = 146
 theme_override_styles/normal = SubResource("StyleBoxFlat_qlg0r")
+placeholder_text = "ers to close"
 alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_qhqgy")

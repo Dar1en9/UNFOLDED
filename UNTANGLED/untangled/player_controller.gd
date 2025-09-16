@@ -23,7 +23,7 @@ var camera: Camera3D
 @onready var input_field: LineEdit = $"interaction ui/Control2/LineEdit"
 @onready var interhint: Label = $"interaction ui/interhint"
 
-var intering
+signal code_submitted(String, Node)
 
 var is_texxxxxt := false
 
@@ -45,11 +45,13 @@ func _input(event: InputEvent) -> void:
 		
 	# Toggle mouse capture with Escape key
 	if Input.is_action_just_pressed("ui_cancel"):
-		pass
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if is_texxxxxt:
+			stop_get_code()
 		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if event.is_action_pressed("interact"):
 		try_interact()
@@ -73,56 +75,29 @@ func _process(delta: float) -> void:
 		mouse_rotation = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	# Get movement input
-	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
-	# Calculate movement direction relative to camera orientation
-	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	# Apply movement velocity
-	if direction:
-		velocity.x = direction.x * walk_speed
-		velocity.z = direction.z * walk_speed
-	else:
-		# Gradually slow down when no input
-		velocity.x = move_toward(velocity.x, 0, walk_speed)
-		velocity.z = move_toward(velocity.z, 0, walk_speed)
-	
-	# Move the character
-	move_and_slide()
+		
+	if !is_texxxxxt:
+		var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
+		if direction:
+			velocity.x = direction.x * walk_speed
+			velocity.z = direction.z * walk_speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, walk_speed)
+			velocity.z = move_toward(velocity.z, 0, walk_speed)
+		
+		move_and_slide()
 	
 	
 
 func try_interact():
 	if interaction_ray.is_colliding():
-		
 		var collider = interaction_ray.get_collider()
-		
-		if (collider.interact_requirement == holding_name || collider.interact_requirement == "none") && !is_texxxxxt:
-			
-			if collider.secret_code != "" && not intering:
-				intering = collider
-				get_code()
-				
-				return
-			
-			#if (collider.interact_requirement == holding_name):
-				#holding_name = "none"
-				#hold_item.texture = null
-			
-			if collider.is_pickble:
-				pick_up_object(collider)
-			elif collider.is_interactable:
-				collider.interact(self)
-			
-			if(collider.interaction_text != ""):
-				control.start_dialogue(collider.interaction_text)
+		if collider.has_method("interact"):
+			collider.interact(self)
 
 func pick_up_object(obj):
-	#if holding_name != "none":
-		#return
-
-	#obj.reparent(self)
 	hold_item.visible = true
 	hold_item.texture = obj.pick_up()
 	holding_name = obj.item_name
@@ -132,24 +107,21 @@ func get_code():
 	input_field.visible = true
 	input_field.grab_focus()
 	is_texxxxxt = true
-	
+
+func stop_get_code():
+	input_field.visible = false
+	input_field.text = ""
+	input_field.release_focus()
+	is_texxxxxt = false
+	disconnect_all_from_signal(code_submitted)
 
 func _on_text_entered(text):
-	if text == intering.secret_code:
-		print("Код верный! Делаем что-то…")
-		
-		if intering.is_pickble:
-				pick_up_object(intering)
-		elif intering.is_interactable:
-				intering.interact(self)
-				
-		input_field.visible = false
-		input_field.text = ""
-		is_texxxxxt = false
-	else:
-		print("Неверный код")
-		input_field.grab_focus()
-		input_field.text = ""
+	emit_signal("code_submitted", text, self)
+	stop_get_code()
 
 func hide_heand():
 	hold_item.visible = !hold_item.visible
+
+func disconnect_all_from_signal(sig: Signal) -> void:
+	for connection in sig.get_connections():
+		sig.disconnect(connection.callable)
