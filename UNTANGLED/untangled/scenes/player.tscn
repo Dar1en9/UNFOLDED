@@ -29,7 +29,7 @@ height = 0.387205
 script = ExtResource("1_3vyb7")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99942, 0.0340448, 0, -0.0340448, 0.99942, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -2)

@@ -61,8 +61,14 @@ sky = SubResource("Sky_71j4m")
 tonemap_mode = 2
 glow_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.096995, 0.0792475, 0.250485, 1)
+fog_light_color = Color(0.1565, 0.08, 0.25, 1)
+fog_light_energy = 1.96
 fog_density = 1.0
+fog_aerial_perspective = 0.427
+fog_height_density = 16.0
+fog_depth_curve = 0.00922895
+fog_depth_begin = 0.0
+fog_depth_end = 4000.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1316
 volumetric_fog_albedo = Color(0.332507, 0.252351, 0.529722, 1)
@@ -267,7 +273,7 @@ stream = ExtResource("7_e3hyu")
 autoplay = true
 
 [node name="player" parent="." instance=ExtResource("2_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413669, 3.39506, 8.70823)
+transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, 0.844, 2.639, 6.603)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
