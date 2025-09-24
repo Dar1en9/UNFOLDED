@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://1solgawgfrma"]
+[gd_scene load_steps=81 format=4 uid="uid://1solgawgfrma"]
 
 [ext_resource type="PackedScene" uid="uid://b66c0htg0a03m" path="res://scenes/player.tscn" id="1_2diqr"]
 [ext_resource type="PackedScene" uid="uid://8jh3103lm6q1" path="res://scenes/item.tscn" id="2_axyqp"]
@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://bqt0d7674ojds" path="res://assets/kitchenstuff/blender_on.png" id="21_4mxcg"]
 [ext_resource type="Texture2D" uid="uid://cuhnsmkiw6ybi" path="res://assets/kitchenstuff/plita_fire.png" id="21_ab5jv"]
 [ext_resource type="Texture2D" uid="uid://cd51jbsy30hsm" path="res://assets/kitchenstuff/blender_off.png" id="22_auug4"]
-[ext_resource type="Texture2D" uid="uid://btaxyjeitf5rt" path="res://assets/transp.png" id="22_gph3w"]
 [ext_resource type="Texture2D" uid="uid://4yr05lr6075g" path="res://assets/kitchenstuff/richag_on.png" id="25_0airf"]
 [ext_resource type="Texture2D" uid="uid://d3nwwapu3didf" path="res://assets/kitchenstuff/richag_off.png" id="26_8rca2"]
 [ext_resource type="Texture2D" uid="uid://cjavqkfnhmtg8" path="res://assets/kitchenstuff/note_morze.png" id="26_pg8nx"]
@@ -776,17 +775,16 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_7qpdh")
 skeleton = NodePath("")
 
-[node name="itemfire" parent="Kitchen" instance=ExtResource("2_axyqp")]
+[node name="kitchen_fire" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.66713, -0.357098, -0.581862)
 texture_init = ExtResource("21_ab5jv")
-texture_interacted = ExtResource("22_gph3w")
 
 [node name="blender" parent="Kitchen" instance=ExtResource("2_axyqp")]
-transform = Transform3D(-0.0402364, 0, 0.99919, 0, 1, 0, -0.99919, 0, -0.0402364, -1.49154, -0.153096, 0.715821)
+transform = Transform3D(-0.0402364, 0, 0.99919, 0, 1, 0, -0.99919, 0, -0.0402364, -1.49154, 0.000563517, 0.715821)
 texture_init = ExtResource("21_4mxcg")
 texture_interacted = ExtResource("22_auug4")
 
-[node name="item" parent="Kitchen" instance=ExtResource("2_axyqp")]
+[node name="richag" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07431, 0.0244479, 2.30801)
 texture_init = ExtResource("25_0airf")
 texture_interacted = ExtResource("26_8rca2")
@@ -849,6 +847,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193863, 0.126326, 1.51265)
 light_color = Color(0.988235, 0.905882, 1, 1)
 light_energy = 0.74
 shadow_enabled = true
+shadow_opacity = 0.89
+shadow_blur = 3.213
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22723, 0.0183639, -1.5343)

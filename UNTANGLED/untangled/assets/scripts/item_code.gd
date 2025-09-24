@@ -15,6 +15,7 @@ func _on_code_entered(text, interactor):
 	if (text == secret_code):
 		is_solven = true
 		print("code is correct!!")
+		sound = null
 		super.interact(interactor)
 		interactor.stop_get_code()
 		is_interactable = false

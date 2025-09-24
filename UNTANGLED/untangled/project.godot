@@ -13,7 +13,7 @@ config_version=5
 config/name="UNTANGLED"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b0r33gv25ij1p"
 
 [input]
 

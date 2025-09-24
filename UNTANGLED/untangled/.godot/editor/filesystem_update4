@@ -1,14 +1,9 @@
-res://scenes/world_2.tscn
+res://scenes/world.tscn
 res://scenes/fire.gdshader
 res://assets/styleboxes/defult.tres
 res://assets/styleboxes/girl_center_style_box_flat.tres
 res://assets/styleboxes/girl_right_style_box_flat.tres
-res://assets/scripts/InteractableItem.gd
-res://scenes/world.tscn
 res://scenes/player.tscn
 res://scenes/ghost.tscn
 res://scenes/item.tscn
-res://assets/scripts/item.gd
-res://player_controller.gd
-res://assets/scripts/item_code.gd
-res://scenes/move_item.gd
+res://scenes/world_2.tscn

@@ -10,8 +10,8 @@ class_name InteractableVisibleItem
 func _ready() -> void:
 	if (texture_init):
 		change_texture(texture_init)
-	else:
-		change_texture(TRANSP)
+	#else:
+		#change_texture(TRANSP)
 
 func interact(interactor):
 	if interact_requirement == "none" || interact_requirement == interactor.holding_name:
@@ -20,6 +20,8 @@ func interact(interactor):
 			if (texture_interacted):
 				change_texture(texture_interacted)
 				play_sound()
+			else:
+				sprite_3d.texture = null
 		
 		if is_pickble:
 			interactor.pick_up_object(self)
