@@ -216,7 +216,7 @@ dialogue_lines = Array[String]([" Отправляйся в прошлое. В �
 metadata/_custom_type_script = "uid://kwnlr6874arg"
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mrxx"]
-font_size = 36
+font_size = 101
 font_color = Color(0.315753, 0.249403, 0.659962, 1)
 
 [node name="world" type="Node3D"]
@@ -276,7 +276,6 @@ autoplay = true
 transform = Transform3D(0.997564, 0, 0.0697565, 0, 1, 0, -0.0697565, 0, 0.997564, 0.844, 2.639, 6.603)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -294,9 +293,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 178.0
-offset_top = -202.0
-offset_right = -194.0
+offset_left = 511.0
+offset_top = -307.0
+offset_right = -419.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_bottom = 20
@@ -308,7 +308,6 @@ theme_override_styles/panel = ExtResource("10_w7kh3")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/PanelContainer"]
 layout_mode = 2
-text = "uuhjgjhghj"
 label_settings = SubResource("LabelSettings_4mrxx")
 horizontal_alignment = 1
 vertical_alignment = 1
