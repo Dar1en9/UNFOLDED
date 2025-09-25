@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://ctawifrtk8fxg"]
+[gd_scene load_steps=50 format=3 uid="uid://ctawifrtk8fxg"]
 
 [ext_resource type="PackedScene" uid="uid://c7jua1dqudrsq" path="res://scenes/ghost.tscn" id="1_qfnet"]
 [ext_resource type="Texture2D" uid="uid://dnxr6jr0d20dn" path="res://assets/fire.png" id="1_rwgxs"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://bmfj6us4luqug" path="res://assets/girl_ghost_central.png" id="2_i7141"]
 [ext_resource type="Texture2D" uid="uid://bswgg2xnk3eai" path="res://assets/girl_ghost_left.png" id="3_4mrxx"]
 [ext_resource type="Texture2D" uid="uid://pkangtl8ytpx" path="res://assets/girl_ghost_right.png" id="4_7r4gi"]
+[ext_resource type="Texture2D" uid="uid://cjalvd8u3ln0u" path="res://assets/girl_human_central.png" id="4_lakw3"]
+[ext_resource type="Texture2D" uid="uid://ypk3upen44jo" path="res://assets/noise/noise_ghost.tres" id="4_pm21f"]
 [ext_resource type="Shader" uid="uid://cin8j3kdqmycj" path="res://scenes/fire.gdshader" id="5_i7141"]
+[ext_resource type="Texture2D" uid="uid://bkfydgnibfk2q" path="res://assets/girl_human_left.png" id="6_pm21f"]
 [ext_resource type="AudioStream" uid="uid://dgblwpsmmwg76" path="res://assets/souds/Firewood_is_burning_in_the_fireplace.mp3" id="7_e3hyu"]
+[ext_resource type="Texture2D" uid="uid://bup3owrky4oka" path="res://assets/girl_human_right.png" id="8_2lf6f"]
 [ext_resource type="Script" uid="uid://ckjvbldxc0543" path="res://assets/scripts/dialogue manager.gd" id="8_7r4gi"]
 [ext_resource type="Script" uid="uid://kwnlr6874arg" path="res://assets/scripts/dialogue_resurce.gd" id="9_w7kh3"]
 [ext_resource type="StyleBox" uid="uid://ctngpxc6juiko" path="res://assets/styleboxes/girl_center_style_box_flat.tres" id="10_w7kh3"]
@@ -20,31 +24,37 @@
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_i7141")
-shader_parameter/albedo_texture = ExtResource("2_i7141")
+shader_parameter/init_texture = ExtResource("2_i7141")
+shader_parameter/trans_texture = ExtResource("4_lakw3")
+shader_parameter/noise_texture = ExtResource("4_pm21f")
 shader_parameter/vawe_period = 16.5
 shader_parameter/vawe_hight = -0.018
 shader_parameter/speed = 0.86
-shader_parameter/diformation = 0.0
+shader_parameter/transform_ind = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7r4gi"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_i7141")
-shader_parameter/albedo_texture = ExtResource("3_4mrxx")
+shader_parameter/init_texture = ExtResource("3_4mrxx")
+shader_parameter/trans_texture = ExtResource("6_pm21f")
+shader_parameter/noise_texture = ExtResource("4_pm21f")
 shader_parameter/vawe_period = 4.635
 shader_parameter/vawe_hight = 0.025
 shader_parameter/speed = 0.86
-shader_parameter/diformation = 0.0
+shader_parameter/transform_ind = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("5_i7141")
-shader_parameter/albedo_texture = ExtResource("4_7r4gi")
+shader_parameter/init_texture = ExtResource("4_7r4gi")
+shader_parameter/trans_texture = ExtResource("8_2lf6f")
+shader_parameter/noise_texture = ExtResource("4_pm21f")
 shader_parameter/vawe_period = 18.911
 shader_parameter/vawe_hight = 0.018
 shader_parameter/speed = 0.79
-shader_parameter/diformation = 0.0
+shader_parameter/transform_ind = 0.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
 sky_top_color = Color(0.0459118, 0.103922, 0.229685, 1)
@@ -60,6 +70,10 @@ background_mode = 2
 sky = SubResource("Sky_71j4m")
 tonemap_mode = 2
 glow_enabled = true
+glow_normalized = true
+glow_strength = 0.62
+glow_bloom = 0.46
+glow_blend_mode = 1
 fog_mode = 1
 fog_light_color = Color(0.1565, 0.08, 0.25, 1)
 fog_light_energy = 1.96
@@ -71,11 +85,13 @@ fog_depth_begin = 0.0
 fog_depth_end = 4000.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1316
-volumetric_fog_albedo = Color(0.332507, 0.252351, 0.529722, 1)
-volumetric_fog_emission = Color(0.0966166, 0.0954202, 0.228385, 1)
-volumetric_fog_anisotropy = 0.68
+volumetric_fog_albedo = Color(0.55, 0.3465, 0.444858, 1)
+volumetric_fog_emission = Color(0.0679073, 0.0669044, 0.1749, 1)
+volumetric_fog_emission_energy = 5.0
+volumetric_fog_anisotropy = 0.9
 volumetric_fog_detail_spread = 0.5
-volumetric_fog_ambient_inject = 0.24
+volumetric_fog_ambient_inject = 1.91
+volumetric_fog_temporal_reprojection_amount = 0.99
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7141"]
 albedo_color = Color(0.466138, 0.35866, 0.379171, 1)
@@ -83,11 +99,11 @@ albedo_color = Color(0.466138, 0.35866, 0.379171, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mrxx"]
 render_priority = 0
 shader = ExtResource("5_i7141")
-shader_parameter/albedo_texture = ExtResource("1_rwgxs")
+shader_parameter/init_texture = ExtResource("1_rwgxs")
 shader_parameter/vawe_period = 24.101
 shader_parameter/vawe_hight = 0.048
 shader_parameter/speed = 5.79
-shader_parameter/diformation = 0.0
+shader_parameter/transform_ind = 0.0
 
 [sub_resource type="Resource" id="Resource_e3hyu"]
 script = ExtResource("9_w7kh3")
@@ -224,7 +240,6 @@ font_color = Color(0.315753, 0.249403, 0.659962, 1)
 [node name="ghost" parent="." instance=ExtResource("1_qfnet")]
 transform = Transform3D(0.992439, 0, -0.122735, 0, 1, 0, 0.122735, 0, 0.992439, 1.39511, 2, -3.56804)
 material_override = SubResource("ShaderMaterial_i7141")
-texture = ExtResource("2_i7141")
 
 [node name="ghost2" parent="." instance=ExtResource("1_qfnet")]
 transform = Transform3D(0.907826, 0, 0.539006, 0, 1.10734, 0, -0.580936, 0, 0.842302, -4.85143, 2.16157, 0)
@@ -258,7 +273,7 @@ billboard = 1
 texture = ExtResource("1_rwgxs")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0525643, 0)
+transform = Transform3D(0.900901, 0, 0, 0, 0.900901, 0, 0, 0, 0.900901, 0, 0.0525645, 0.0443463)
 light_color = Color(0.936648, 0.770095, 0.464411, 1)
 light_energy = 6.576
 light_volumetric_fog_energy = 1.3

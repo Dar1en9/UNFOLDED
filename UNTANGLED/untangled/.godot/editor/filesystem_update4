@@ -1,5 +1,6 @@
 res://scenes/world.tscn
 res://scenes/fire.gdshader
+res://assets/noise/noise_ghost.tres
 res://scenes/player.tscn
 res://scenes/ghost.tscn
 res://scenes/item.tscn
