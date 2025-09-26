@@ -27,7 +27,8 @@ signal code_submitted(String, Node)
 
 var is_texxxxxt := false
 
-# Rotation variables
+var solved := false
+
 var mouse_rotation: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -125,3 +126,6 @@ func hide_heand():
 func disconnect_all_from_signal(sig: Signal) -> void:
 	for connection in sig.get_connections():
 		sig.disconnect(connection.callable)
+
+func display_text(text : String):
+	control.start_dialogue(text, solved)

@@ -1,6 +1,7 @@
 [gd_resource type="NoiseTexture2D" load_steps=2 format=3 uid="uid://ypk3upen44jo"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lv6vd"]
+seed = -20
 frequency = 0.0106
 fractal_gain = 0.185
 fractal_weighted_strength = 0.72

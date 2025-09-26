@@ -1,7 +1,15 @@
 res://scenes/world.tscn
 res://scenes/fire.gdshader
 res://assets/noise/noise_ghost.tres
+res://assets/scripts/ghost.gd
+res://assets/scripts/cool_bro_manager.gd
+res://assets/scripts/dialogue manager.gd
+res://assets/scripts/dialogue_resurce.gd
 res://scenes/player.tscn
 res://scenes/ghost.tscn
 res://scenes/item.tscn
 res://scenes/world_2.tscn
+res://assets/scripts/interaction_ui.gd
+res://assets/scripts/item.gd
+res://player_controller.gd
+res://assets/scripts/item_code.gd

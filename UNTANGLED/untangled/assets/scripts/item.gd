@@ -26,6 +26,9 @@ func interact(interactor):
 		if is_pickble:
 			interactor.pick_up_object(self)
 			play_sound()
+		
+		if interaction_text != "":
+			interactor.display_text(interaction_text)
 
 func pick_up() -> Texture:
 	if (pick_up_texture):

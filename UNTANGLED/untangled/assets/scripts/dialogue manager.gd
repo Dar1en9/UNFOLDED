@@ -1,6 +1,10 @@
 extends Control
 
 @export var intro_dialogue : Array[DialRes]
+@export var outro_dialogue : Array[DialRes]
+
+@export var outro_anim_dur = 5.
+
 var queue : Array[DialRes]
 var curr_replic : Array[String]
 
@@ -24,7 +28,10 @@ var simultaneous_scene = preload("res://scenes/world_2.tscn").instantiate()
 @onready var label: Label = $MarginContainer/PanelContainer/Label
 
 func _ready() -> void:
-	start_dialogue(intro_dialogue)
+	if !CoolBroManager.is_objective_met:
+		start_dialogue(intro_dialogue)
+	else:
+		outro()
 
 func start_dialogue(lines : Array[DialRes]):
 	label.text = ""
@@ -46,6 +53,7 @@ func next_replic():
 	set_panel_colors(speacers_colors[next_rep.speaker_ind])
 	speacers[next_rep.speaker_ind].squish_animation()
 	curr_replic = next_rep.dialogue_lines
+	
 	next_line()
 
 func next_line():
@@ -59,8 +67,8 @@ func end_dialogue():
 	label.text = ""
 	visible = false;
 	
+	CoolBroManager.change_scene()
 	#get_tree().root.add_child(simultaneous_scene)
-	get_tree().change_scene_to_file("res://scenes/world_2.tscn")
 
 
 func set_panel_colors(colors):
@@ -70,3 +78,11 @@ func set_panel_colors(colors):
 
 	#panel.set_bg_color(colors[0])
 	#panel.set_border_color(colors[1])
+	
+func outro():
+	for speaker in speacers:
+		speaker.transition_animation(outro_anim_dur)
+		
+	await get_tree().create_timer(outro_anim_dur).timeout
+	
+	start_dialogue(outro_dialogue)

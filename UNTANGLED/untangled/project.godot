@@ -15,6 +15,10 @@ run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://b0r33gv25ij1p"
 
+[autoload]
+
+CoolBroManager="*res://assets/scripts/cool_bro_manager.gd"
+
 [input]
 
 move_left={

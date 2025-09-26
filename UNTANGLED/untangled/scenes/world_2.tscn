@@ -783,6 +783,7 @@ texture_init = ExtResource("21_ab5jv")
 transform = Transform3D(-0.0402364, 0, 0.99919, 0, 1, 0, -0.99919, 0, -0.0402364, -1.49154, 0.000563517, 0.715821)
 texture_init = ExtResource("21_4mxcg")
 texture_interacted = ExtResource("22_auug4")
+interaction_text = "eadas"
 
 [node name="richag" parent="Kitchen" instance=ExtResource("2_axyqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07431, 0.0244479, 2.30801)
@@ -808,6 +809,7 @@ sound = NodePath("../../for_bag")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.98957, -0.759694, 0.0433697)
 script = ExtResource("28_j8pyg")
 secret_code = "1251"
+is_the_servera = false
 texture_init = ExtResource("29_0fc1a")
 texture_interacted = ExtResource("27_pg8nx")
 pick_up_texture = ExtResource("28_hmty3")
@@ -821,8 +823,10 @@ sound = NodePath("../../wrong_sound")
 transform = Transform3D(-3.99959e-08, 0, -0.915, 0, 0.915, 0, 0.915, 0, -3.99959e-08, 1.98765, -0.206219, 1.49237)
 script = ExtResource("28_j8pyg")
 secret_code = "ZRHN"
+is_the_servera = true
 texture_interacted = ExtResource("30_pg8nx")
 sound = NodePath("../../wrong_sound")
+interaction_text = "ЧТООООО!!!! ЭТО ЖЕ СЕРВЕРА ДЛ МАЙНИНГА БИТКОИНОВ!!!"
 
 [node name="wall_colls" type="StaticBody3D" parent="Kitchen"]
 
